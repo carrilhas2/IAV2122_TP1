@@ -4,30 +4,54 @@ using UnityEngine;
 
 public class World : MonoBehaviour
 {
-    public GameObject block;
-    public int size;
 
-    // Start is called before the first frame update
-    void Start(){
-       StartCoroutine(BuildWorld());
-    }
+    public Material material;
+    public BlockType[] blocktypes;
 
-    // Update is called once per frame
-    void Update(){
-        
-    }
+}
 
-    IEnumerator BuildWorld(){
-        for(int z = 0; z < size; z++){
-            for(int y = 0; y < size; y++){
-                for(int x = 0; x < size; x++){
-                    Vector3 pos = new Vector3(x, y, z);
-                    GameObject cubo = GameObject.Instantiate(block, pos, Quaternion.identity);
-                    cubo.transform.parent = this.transform;
-                    cubo.name = x + " " + y + " " + z;
-                }
-            }
-            yield return null;
+[System.Serializable]
+public class BlockType
+{
+
+    public string blockName;
+    public bool isSolid;
+
+    [Header("Texture Values")]
+    public int backFaceTexture;
+    public int frontFaceTexture;
+    public int topFaceTexture;
+    public int bottomFaceTexture;
+    public int leftFaceTexture;
+    public int rightFaceTexture;
+
+    // Back, Front, Top, Bottom, Left, Right
+
+    public int GetTextureID(int faceIndex)
+    {
+
+        switch (faceIndex)
+        {
+
+            case 0:
+                return backFaceTexture;
+            case 1:
+                return frontFaceTexture;
+            case 2:
+                return topFaceTexture;
+            case 3:
+                return bottomFaceTexture;
+            case 4:
+                return leftFaceTexture;
+            case 5:
+                return rightFaceTexture;
+            default:
+                Debug.Log("Error in GetTextureID; invalid face index");
+                return 0;
+
+
         }
+
     }
+
 }
