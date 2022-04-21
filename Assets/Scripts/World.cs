@@ -35,8 +35,8 @@ public class World : MonoBehaviour {
         playerChunkCoord = GetChunkCoordFromVector3(player.position);
 
         // Only update the chunks if the player has moved from the chunk they were previously on.
-        //if (!playerChunkCoord.Equals(playerLastChunkCoord))
-        //    CheckViewDistance();
+        if (!playerChunkCoord.Equals(playerLastChunkCoord))
+            CheckViewDistance();
 
 
     }
