@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 1750901694}
   - component: {fileID: 1750901696}
   - component: {fileID: 1750901695}
+  - component: {fileID: 1750901697}
   m_Layer: 5
   m_Name: Debug Screen
   m_TagString: Untagged
@@ -524,6 +525,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750901693}
   m_CullTransparentMesh: 1
+--- !u!114 &1750901697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750901693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22a75bbfd87f0549b8e0c50f7df93c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1872303074
 GameObject:
   m_ObjectHideFlags: 0
