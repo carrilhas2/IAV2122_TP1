@@ -39,8 +39,8 @@ public class Player : MonoBehaviour {
         if (jumpRequest)
             Jump();
 
-        transform.Rotate(Vector3.up * mouseHorizontal);
-        cam.Rotate(Vector3.right * -mouseVertical);
+        transform.Rotate(Vector3.up * mouseHorizontal * 10);
+        cam.Rotate(Vector3.right * -mouseVertical * 10);
         transform.Translate(velocity, Space.World);
 
     }
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour {
         mouseVertical = Input.GetAxis("Mouse Y");
 
         if (Input.GetButtonDown("Sprint"))
-            isSprinting = true;
+            isSprinting = true; 
         if (Input.GetButtonUp("Sprint"))
             isSprinting = false;
 
